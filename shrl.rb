@@ -43,6 +43,6 @@ not_found do
 end
 
 error do
-  @error = request.env['sinatra_error'].name
+  @error = env['sinatra.error'].name
   erb :'500'
 end
