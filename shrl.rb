@@ -43,6 +43,11 @@ not_found do
 end
 
 error do
-  @error = env['sinatra.error'].name
+  if env['sinatra.error'].respond_to? :name
+    @error = env['sinatra.error'].name
+  else
+    @error = env['sinatra.error']
+  end
+  
   erb :'500'
 end
