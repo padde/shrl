@@ -1,0 +1,13 @@
+<form method="post" action="/" name="form">
+	<input type="text" name="url" value="" placeholder="URL" size="80" id="url">
+	<input type="submit" name="submit" value="shurl it!" id="submit">
+</form>
+
+<% if @shorturl %>
+<p id="result">
+	<span id="yourlink">Your shortened link:</span>
+	<a href="<%= env['HTTP_REFERER']+@shorturl.shortcode %>">
+		<%= env['HTTP_REFERER'] + @shorturl.shortcode %>
+	</a>
+</p>
+<% end %>
