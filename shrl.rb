@@ -24,6 +24,7 @@ post '/' do
   end
   
   @shorturl = ShortURL.first_or_create( destination: uri.to_s )
+  @url = @shorturl.destination
   
   erb :index
 end
