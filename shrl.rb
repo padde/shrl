@@ -41,21 +41,26 @@ get '/:shortcode' do
 end
 
 not_found do
+  @url = params[:url]
   @error = 'Page not found.'
   erb :index
 end
 
 error URI::InvalidURIError do
+  @url = params[:url]
   @error = 'Sorry, this is an invalid URL.'
   erb :index
 end
 
 error InvalidProtocolError do
+  @url = params[:url]
   @error = 'Sorry, only HTTP and HTTPS are supported.'
   erb :index
 end
 
 error do
+  @url = params[:url]
+  
   if env['sinatra.error'].respond_to? :name
     @error = env['sinatra.error'].name
   else
