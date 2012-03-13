@@ -34,8 +34,8 @@ get '/:shortcode' do
   @shorturl = ShortURL.get(id)
   
   unless @shorturl.nil?
-    redirect @shorturl.destination
     @shorturl.update( clicks: @shorturl.clicks + 1 )
+    redirect @shorturl.destination
   else
     raise Sinatra::NotFound
   end
