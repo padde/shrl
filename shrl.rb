@@ -41,6 +41,7 @@ get '/:shortcode' do
 end
 
 not_found do
+  @error = 'Page not found.'
   erb :index
 end
 
