@@ -1,0 +1,28 @@
+<h2>All shrls</h2>
+
+<div id="list">
+	<% if !@shorturls.blank? %>
+		<table>
+			<tr>
+				<th>shrl</th>
+				<th>destination</th>
+			</tr>
+			<% for shorturl in @shorturls %>
+				<tr>
+					<td>
+						<a href="<%= shorturl.shortcode %>">
+							<%= shorturl.shortcode %>
+						</a>
+					</td>
+					<td>
+						<a href="<%= shorturl.destination %>">
+							<%= shorturl.destination %>
+						</a>
+					</td>
+				</tr>
+			<% end %>
+		</table>
+	<% else %>
+		<p>No shrls yet!</p>
+	<% end %>
+</div>

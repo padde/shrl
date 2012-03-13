@@ -6,6 +6,11 @@ get '/' do
   erb :index
 end
 
+get '/list' do
+  @shorturls = ShortURL.all
+  erb :list
+end
+
 post '/' do
   unless params[:url] =~ /http:\/\/.*/
     params[:url] = "http://#{params[:url]}"
