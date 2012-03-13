@@ -5,6 +5,7 @@
 		<table>
 			<tr>
 				<th>shrl</th>
+				<th>clicks</th>
 				<th>destination</th>
 			</tr>
 			<% for shorturl in @shorturls %>
@@ -13,6 +14,9 @@
 						<a href="<%= shorturl.shortcode %>">
 							<%= shorturl.shortcode %>
 						</a>
+					</td>
+					<td>
+						<%= shorturl.clicks %>
 					</td>
 					<td>
 						<a href="<%= shorturl.destination %>">
