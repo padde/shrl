@@ -7,6 +7,10 @@ get '/' do
 end
 
 post '/' do
+  unless params[:url] =~ /http:\/\/.*/
+    params[:url] = "http://#{params[:url]}"
+  end
+  
   uri = URI::parse params[:url]
   unless uri.kind_of? URI::HTTP or uri.kind_of? URI::HTTPS
     raise "Invalid URL"
