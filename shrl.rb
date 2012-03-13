@@ -12,13 +12,13 @@ get '/list' do
 end
 
 post '/' do
-  unless params[:url] =~ /http:\/\/.*/
+  unless params[:url] =~ /[a-zA-Z]+:\/\/.*/
     params[:url] = "http://#{params[:url]}"
   end
   
   uri = URI::parse params[:url]
   unless uri.kind_of? URI::HTTP or uri.kind_of? URI::HTTPS
-    raise "Invalid URL"
+    raise InvalidProtocolError
   end
   
   @shorturl = ShortURL.first_or_create( destination: uri.to_s )
@@ -42,6 +42,16 @@ not_found do
   erb :'404'
 end
 
+error URI::InvalidURIError do
+  @error = 'Sorry, this is an invalid URL.'
+  erb :'500'
+end
+
+error InvalidProtocolError do
+  @error = 'Sorry, only HTTP and HTTPS are supported.'
+  erb :'500'
+end
+
 error do
   if env['sinatra.error'].respond_to? :name
     @error = env['sinatra.error'].name
@@ -51,3 +61,5 @@ error do
   
   erb :'500'
 end
+
+class InvalidProtocolError < Error; end
