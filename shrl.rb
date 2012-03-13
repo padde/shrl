@@ -44,5 +44,5 @@ end
 
 error do
   @error = request.env['sinatra_error'].name
-  haml :'500'
+  erb :'500'
 end
