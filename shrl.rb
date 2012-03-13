@@ -2,7 +2,7 @@ require 'rubygems'
 require 'sinatra'
 require './lib/shorturl'
 
-class InvalidProtocolError < Error; end
+class InvalidProtocolError < StandardError; end
 
 get '/' do
   erb :index
