@@ -2,5 +2,5 @@ require 'rubygems'
 require 'bundler/setup'
 require 'sinatra'
 
-require './shurl'
+require './shrl'
 run Sinatra::Application

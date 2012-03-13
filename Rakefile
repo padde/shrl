@@ -9,3 +9,10 @@ namespace :db do
     puts 'done.'
   end  
 end
+
+namespace :server do
+  desc "start server"
+  task :start do
+    system "shotgun"
+  end
+end

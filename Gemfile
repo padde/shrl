@@ -4,13 +4,6 @@ gem 'rake'
 gem 'heroku'
 gem 'sinatra'
 gem 'datamapper'
+gem 'dm-postgres-adapter'
 gem 'haml'
 
-group :development do
-  gem 'shotgun'
-  gem 'dm-sqlite-adapter'
-end
-
-group :production do
-  gem 'dm-postgres-adapter'
-end
