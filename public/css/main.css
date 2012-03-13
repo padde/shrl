@@ -103,9 +103,13 @@ input[type='submit']:active {
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c9c9c9', endColorstr='#f7f7f7',GradientType=0 ); /* IE6-9 */
 }
 
-#result {
+#result, #error {
 	margin-top: 2em;
 	font-size: 1.5em;
+}
+
+#error{
+	color: rgba(230,0,10,1);
 }
 
 #yourlink {
