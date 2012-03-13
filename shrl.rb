@@ -41,17 +41,17 @@ get '/:shortcode' do
 end
 
 not_found do
-  erb :'404'
+  erb :index
 end
 
 error URI::InvalidURIError do
   @error = 'Sorry, this is an invalid URL.'
-  erb :'500'
+  erb :index
 end
 
 error InvalidProtocolError do
   @error = 'Sorry, only HTTP and HTTPS are supported.'
-  erb :'500'
+  erb :index
 end
 
 error do
@@ -61,5 +61,5 @@ error do
     @error = env['sinatra.error']
   end
   
-  erb :'500'
+  erb :index
 end

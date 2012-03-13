@@ -3,6 +3,10 @@
 	<input type="submit" name="submit" value="shrl it!" id="submit">
 </form>
 
+<% if @error %>
+<p id="error"> Whooops! <%= @error %></p>
+<% end %>
+
 <% if @shorturl %>
 <p id="result">
 	<span id="yourlink">Your shortened link:</span>
