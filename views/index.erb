@@ -10,8 +10,15 @@
 <% if @shorturl %>
 <p id="result">
 	<span id="yourlink">Your shortened link:</span>
-	<a href="<%= env['HTTP_REFERER']+@shorturl.shortcode %>">
-		<%= env['HTTP_REFERER'] + @shorturl.shortcode %>
-	</a>
+	<form name="resultform">
+		<input type="text" name="shortcode" value="<%= env['HTTP_REFERER']+@shorturl.shortcode %>" placeholder="URL" size="80" id="url">
+	</form>
 </p>
+	<script type="text/javascript">
+		document.forms.resultform.url.focus()
+	</script>
+<% else %>
+	<script type="text/javascript">
+		document.forms.form.url.focus()
+	</script>
 <% end %>
