@@ -10,7 +10,7 @@
 <% if @shorturl %>
 <p id="result">
 	<span id="yourlink">Your shortened link:</span>
-	<form name="resultform">
+	<form name="resultform" id="resultform">
 		<input type="text" name="shortcode" value="<%= env['HTTP_REFERER']+@shorturl.shortcode %>" placeholder="URL" size="30" id="shortcode">
 	</form>
 </p>
@@ -19,6 +19,6 @@
 	</script>
 <% else %>
 	<script type="text/javascript">
-		document.forms.form.url.focus()
+		document.forms.form.shortcode.focus()
 	</script>
 <% end %>
