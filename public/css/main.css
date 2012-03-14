@@ -112,6 +112,12 @@ input[type='submit']:active {
 	color: rgba(230,0,10,1);
 }
 
+#result #shortcode {
+	font-size: 1.5em;
+	height: 2em;
+	color: rgba(5,135,180,1);
+}
+
 #yourlink {
 	display: block;
 	font-size: 0.5em;
