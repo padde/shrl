@@ -4,11 +4,25 @@ require './lib/shorturl'
 
 class InvalidProtocolError < StandardError; end
 
+helpers do
+  def protected!
+    return if authorized?
+    headers['WWW-Authenticate'] = 'Basic realm="Access Restricted"'
+    halt 401, "Not authorized\n"
+  end
+
+  def authorized?
+    @auth ||=  Rack::Auth::Basic::Request.new(request.env)
+    @auth.provided?  && @auth.basic?  && @auth.credentials && @auth.credentials == [ENV['HTTP_USER'], ENV['HTTP_PASS']]
+  end
+end
+
 get '/' do
   erb :index
 end
 
 get '/list' do
+  protected!
   @shorturls = ShortURL.all
   erb :list
 end
