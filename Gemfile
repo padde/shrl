@@ -7,3 +7,6 @@ gem 'datamapper'
 gem 'dm-postgres-adapter'
 gem 'haml'
 
+group :development do
+  gem 'dm-sqlite-adapter'
+end
