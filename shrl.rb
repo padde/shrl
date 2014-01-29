@@ -18,8 +18,8 @@ post '/' do
     params[:url] = "http://#{params[:url]}"
   end
   
-  uri = URI::parse params[:url]
-  unless uri.kind_of? URI::HTTP or uri.kind_of? URI::HTTPS
+  uri = URI::parse(params[:url])
+  unless uri.kind_of?(URI::HTTP) || uri.kind_of?( URI::HTTPS)
     raise InvalidProtocolError
   end
   
