@@ -9,4 +9,5 @@ gem 'haml'
 
 group :development do
   gem 'dm-sqlite-adapter'
+  gem 'shotgun'
 end
