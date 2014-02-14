@@ -156,9 +156,23 @@ a:hover {
   input {
     max-width: 100%;
     display: block;
+    margin-top: 0;
+  }
+
+  form {
+    margin-top: 0.5em;
+  }
+
+  #result, #error {
+    margin-top: 0.5em;
+    font-size: 1em;
+  }
+
+  #resultform {
+    margin-top: 0;
   }
 
   body {
-    padding-top: 7em;
+    padding-top: 5em;
   }
 }
