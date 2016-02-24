@@ -1,3 +1,6 @@
+require 'dotenv'
+Dotenv.load
+
 require './lib/shorturl'
 
 namespace :db do
@@ -5,7 +8,7 @@ namespace :db do
   task :migrate do
     print 'migrating database... '
     require 'dm-migrations'
-    DataMapper.auto_migrate!
+    DataMapper.auto_upgrade!
     puts 'done.'
   end  
 end

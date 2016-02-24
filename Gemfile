@@ -6,8 +6,8 @@ gem 'sinatra'
 gem 'datamapper'
 gem 'dm-postgres-adapter'
 gem 'haml'
+gem 'dotenv'
 
 group :development do
-  gem 'dm-sqlite-adapter'
   gem 'shotgun'
 end

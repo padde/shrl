@@ -37,9 +37,6 @@ GEM
       json (~> 1.6)
       json_pure (~> 1.6)
       multi_json (~> 1.0)
-    dm-sqlite-adapter (1.2.0)
-      dm-do-adapter (~> 1.2.0)
-      do_sqlite3 (~> 0.10.6)
     dm-timestamps (1.2.0)
       dm-core (~> 1.2.0)
     dm-transactions (1.2.0)
@@ -56,8 +53,7 @@ GEM
       dm-core (~> 1.2.0)
     do_postgres (0.10.17)
       data_objects (= 0.10.17)
-    do_sqlite3 (0.10.17)
-      data_objects (= 0.10.17)
+    dotenv (2.1.0)
     fastercsv (1.5.5)
     haml (4.0.7)
       tilt
@@ -84,7 +80,7 @@ PLATFORMS
 DEPENDENCIES
   datamapper
   dm-postgres-adapter
-  dm-sqlite-adapter
+  dotenv
   haml
   rake
   shotgun

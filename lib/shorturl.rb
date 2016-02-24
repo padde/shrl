@@ -1,7 +1,6 @@
 require 'dm-core'
 require 'dm-timestamps'
 
-ENV['DATABASE_URL'] ||= "sqlite://#{File.expand_path(File.dirname(__FILE__)+'/..')}/db/development.db"
 DataMapper.setup(:default, ENV['DATABASE_URL'])
 
 class ShortURL
